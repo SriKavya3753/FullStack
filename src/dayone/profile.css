@@ -5,7 +5,8 @@
 .container {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 300px;
+    height: 300px;
     border: 2px solid;
     border-color: rgba(220, 208, 208,0.7);
     align-items: center;
@@ -15,7 +16,7 @@
 .image img {
    height: 100px;
    width: 100px; 
-
+   margin-top: 5px;
 }
 #name {
     display: flex;
@@ -43,12 +44,12 @@
 }
 a{
     border: 2px solid;
-    padding: 15px 70px;
+    padding: 15px 115px;
     border-color: rgba(220, 208, 208,0.7);
     text-decoration: none;
     color: blue;
     font-family: sans-serif;
-    
+    margin-top: 35px;
 }
  
  a:hover{

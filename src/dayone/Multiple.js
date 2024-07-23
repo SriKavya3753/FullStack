@@ -8,14 +8,14 @@ function Multiple(){
                 <Profile />
                 <Profile />
                 <Profile />
-                <Profile />
+       
             </div>
             <div className="row"> 
                 <Profile />
                 <Profile />
                 <Profile />
                 <Profile />
-                <Profile />
+        
             </div>
         </div>
     );

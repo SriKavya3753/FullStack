@@ -1,7 +1,8 @@
 import ReactDOM from "react-dom/client";
-import Multiple from "./Multiple";
-// import GetReview from './Reviews';
-// import Profile from "./Profiles";
+//import GetReview from "./dayone/Reviews";
+import Product from "./day2/Product";
+
 const rootElement = document.getElementById('root')
 const rootRef = ReactDOM.createRoot(rootElement);
-rootRef.render(<Multiple />);
+rootRef.render(<Product />);
+//rootRef.render(<GetReview />);
