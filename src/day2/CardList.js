@@ -1,3 +1,4 @@
+
 import CardUI from "./Card";
 function CardListUI(){
     // const detail = {name:"John", desc:"Busting social media myths at the Social Media Lab,...",year:"2nd year",branch:"AIML"};
@@ -9,6 +10,7 @@ function CardListUI(){
     const users = ["Name1","Name2","Name3","Name4","Name5","Name6","Name7","Name8"]
     return (
         <div style={{display:'flex', flexWrap:'wrap'}}>
+        {/* <Navigation/> */}
         {
             details.map(
                 (user,index)=> (<CardUI key={index}  
