@@ -1,20 +1,22 @@
 import { useContext,useRef, useState, useEffect } from "react";
-import { UserContext } from "../day4/Home"; //(It becomes consumer of context)
+import { GlobalContext } from "../App"; //(It becomes consumer of context)
 
 function Login(){
     const [isEqual,setEqual] = useState("");
     const idRef = useRef(null);
     const passwordRef = useRef(null);
-    const {isLogin,setIsLogin} = useContext(UserContext);
+    const {setGlobalIsLogin,globalObject} = useContext(GlobalContext);
+    localStorage.setItem("name","Sri Kavya");
+    localStorage.setItem("branch","AIML");
     useEffect(() => {
          //Set focus to the College Id input field when the component mounts
         idRef.current.focus();
     }, []);
     const formSubmitted = (event) => {
         event.preventDefault();
-        if(idRef.current.value === passwordRef.current.value){ 
+        if(idRef.current.value === globalObject.collegeId && passwordRef.current.value === globalObject.password){ 
             setEqual("Correct");
-            setIsLogin(true);
+            setGlobalIsLogin(true);
         }    
         else
             setEqual("InCorrect");
@@ -22,24 +24,23 @@ function Login(){
         passwordRef.current.value = "";
     }
     return (
-       <div style={{display:'flex',justifyContent:"center",marginTop:'40'}}>
-             <div className="card" style={{width:'300',padding:'5',alignItems:"center"}}>
-                 <div style={{ display: 'flex', flexDirection:"column", justifyContent: 'flex-start' }}>
-                     <h3>Login</h3>
-                     <p>Provide your details to login</p>
-                 </div>
-                 <form onSubmit={formSubmitted}>
-                     <label className="form-label" >College Id</label><br/>
-                     <input type="text" placeholder="College Id" ref={idRef}/><br/>
-                     <label className="form-label">Password</label><br/>
-                     <input type="password" placeholder="Password" ref={passwordRef}/><br/><br />
-                     <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                     <button className="btn btn-dark">Login</button>
-                     </div>
-                 </form>
-                 <h1>{isEqual}</h1>
-             </div>
-         </div> 
+        <div className="container" style={{display:"flex" ,justifyContent:"center",margin:'30 auto'}}>
+            <div className="card" style={{width:"300px",padding:'20px'}} >
+                <h1>Login</h1>
+                <p>Provide your details to login</p>
+                <form onSubmit={formSubmitted}
+                    style={{display:"flex",flexDirection:"column",gap:"10px"}}>
+                        <label>College Id</label>
+                        <input type="text" placeholder="College Id" ref={idRef}/>
+                        <label>Password</label>
+                        <input type="password" placeholder="Password" ref={passwordRef}/><br></br>
+                        <div style={{display:"flex",justifyContent:"flex-end"}}>
+                            <button type="submit" className="btn btn-dark" style={{width:"100" ,justifyContent:"flex-end"}} >Login</button>
+                        </div>
+                        <p>{isEqual}</p>           
+                </form>
+            </div>
+        </div>
         );    
 }
 export default Login;

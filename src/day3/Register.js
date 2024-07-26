@@ -1,7 +1,10 @@
-import { useState,useContext } from "react";
+import { useState,useContext, useRef,useEffect } from "react";
 import { GlobalContext } from "../App";
 
 function Register(){
+    const idRef = useRef(null);
+    const passwordRef = useRef(null);
+    const emailRef = useRef(null);
     const [collegeId, setCollegeId] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
@@ -10,6 +13,11 @@ function Register(){
     const [gender, setGender] = useState("");
     const [user,setUser] = useState([]);
     const {globalObject,setGlobalObject} = useContext(GlobalContext);
+
+    useEffect(() => {
+        //Set focus to the College Id input field when the component mounts
+       idRef.current.focus();
+   }, []);
 
     //const [studentData, setStudentData] = useState([]);
     const getCollegeId = (event) => {
@@ -45,9 +53,9 @@ function Register(){
         setUser(obj);
         console.log(user);
         setGlobalObject(obj);
-        setCollegeId("");
-        setPassword("");
-        setEmail("");
+        idRef.current.value = "";
+        passwordRef.current.value = "";
+        emailRef.current.value = "";
         setBranch("");
         setYear("");
         setGender("");
@@ -65,6 +73,7 @@ function Register(){
                        className="form-control" 
                        id="exampleInputId" 
                        placeholder="College Id" 
+                       ref={idRef}
                        onChange={getCollegeId}
                 />
             </div>
@@ -74,6 +83,7 @@ function Register(){
                        className="form-control"  
                        id="exampleInputPassword1" 
                        placeholder="Password" 
+                       ref={passwordRef}
                        onChange={getPassword}
                 />
             </div>
@@ -84,6 +94,7 @@ function Register(){
                        id="exampleInputEmail1" 
                        aria-describedby="emailHelp" 
                        placeholder="Email address"
+                       ref={emailRef}
                        onChange={getEmail}
                 />
             </div>

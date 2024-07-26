@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Product from "./Product";
 //import { Link } from "react-router-dom";
 import { Navigation } from "../day4/Navigation";
+
 function ProductPage(){
     const [data,setData] = useState([]);
     useEffect(() => {

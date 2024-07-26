@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { GlobalContext } from "../App";
 
 export function Navigation(){
+    const {globalIsLogin,setGlobalIsLogin} = useContext(GlobalContext);
     const {globalCount,setGlobalCount} = useContext(GlobalContext);
     return (
         <div style={{display:"flex",flexDirection:"row",
@@ -14,6 +15,7 @@ export function Navigation(){
             <div style={{display:'flex', gap:'10px',cursor:'pointer'}}>
                 <Link to="/cart">Cart({globalCount})</Link>
                 <Link to="/profile">Profile</Link>
+                {/* <Link to="/" onClick={setGlobalIsLogin(false)}>LogOut</Link> */}
             </div>
         </div>
     );

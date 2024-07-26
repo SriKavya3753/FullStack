@@ -2,9 +2,10 @@ import { useContext,useEffect, useState } from "react";
 import { GlobalContext } from "../App";
 
 //Hooks 
-function FunComp(){
+function CartComp(){
     const {globalCount, setGlobalCount} = useContext(GlobalContext);
     const [count, setCount] = useState(0);
+    const [cart,setCart] = useState({});
     useEffect(() =>{
         // setCount(5);
         console.log("Use effect is called");
@@ -12,6 +13,10 @@ function FunComp(){
     const btnUpdateInc = () => {
         setCount(count+1);
         setGlobalCount(globalCount+1);
+        // const obj = {props.key,count};
+        // setCart(obj);
+        // setCartObject((prevList)=>[...prevList,cart]);
+        // setCartObject({props.key,count});
     }
     const btnUpdateDecr = () => {
         if(count > 0){
@@ -20,6 +25,7 @@ function FunComp(){
         }    
     }
     const AddToCart = () => { 
+
         setCount(1);
         setGlobalCount(globalCount+1);
     }  
@@ -38,4 +44,4 @@ function FunComp(){
             </div>
     );  
 }
-export default FunComp;
+export default CartComp;
