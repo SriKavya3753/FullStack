@@ -3,8 +3,7 @@ import { useContext } from "react";
 import { GlobalContext } from "../App";
 
 export function Navigation(){
-    const {globalIsLogin,setGlobalIsLogin} = useContext(GlobalContext);
-    const {globalCount,setGlobalCount} = useContext(GlobalContext);
+    const {globalCount} = useContext(GlobalContext);
     return (
         <div style={{display:"flex",flexDirection:"row",
             justifyContent:"space-between",background:"#e5e5e5",padding:"15px"}}>

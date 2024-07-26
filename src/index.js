@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import Profile from "./day4/Profile";
+
 // import Cart from "./day3/Cart";
-import CartList from "./day3/ProductPage";
+
 
 //import Multiple from "./dayone/Multiple";
 //import DataFetching from "./daythree.js/DataFetching";

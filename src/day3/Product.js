@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import CartComp from "../day2/CartComp"
 function Product(props){
     
