@@ -12,7 +12,7 @@ function Register(){
     const [year, setYear] = useState("");
     const [gender, setGender] = useState("");
     const [user,setUser] = useState([]);
-    const {globalObject,setGlobalObject} = useContext(GlobalContext);
+    const {setGlobalObject} = useContext(GlobalContext);
 
     useEffect(() => {
         //Set focus to the College Id input field when the component mounts
@@ -61,7 +61,7 @@ function Register(){
         setGender("");
     }
     return (
-    <div class="card"  style={{border:"1px solid gray",padding:'10',margin:'30 auto',width:'300'}}>
+    <div className="card"  style={{border:"1px solid gray",padding:'10',margin:'30 auto',width:'300'}}>
         <div style={{ display: 'flex', flexDirection:"column", justifyContent: 'flex-start' }}>
             <h3>Register</h3>
             <p>Provide your details to login</p>
@@ -78,7 +78,7 @@ function Register(){
                 />
             </div>
             <div className="mb-3">
-                <label htmlFor="exampleInputPassword1" class="form-label">Password</label>
+                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                 <input type="password" 
                        className="form-control"  
                        id="exampleInputPassword1" 
@@ -101,7 +101,7 @@ function Register(){
             <div className="mb-3">
                 <label htmlFor="exampleInputBranch" className="form-label">Branch</label>
                 <select className="form-select" aria-label="Default select example" value={branch} onChange={getBranch}>
-                    <option value="" selected>Select a branch</option>
+                    <option value="">Select a branch</option>
                     <option value="CSE">CSE</option>
                     <option value="AIML">AIML</option>
                     <option value="AIDS">AIDS</option>
@@ -111,7 +111,7 @@ function Register(){
             <div className="mb-3">
                 <label htmlFor="exampleInputYear" className="form-label">Year</label>
                 <select className="form-select" aria-label="Default select example" value={year} onChange={getYear}>
-                    <option value="" selected>Select a year</option>
+                    <option value="">Select a year</option>
                     <option value="1">First</option>
                     <option value="2">Second</option>
                     <option value="3">Third</option>
